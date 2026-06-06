@@ -18,6 +18,13 @@
   .batch-card a:hover { text-decoration: underline; }
   .status { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-top: 0.5rem; }
   .pending { background: #2d2d00; color: var(--yellow); }
+  .done { background: #0d2a0d; color: var(--green); border: 1px solid var(--green); }
+  .verdict-counts { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .verdict-pill { font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 20px; }
+  .v-buy   { background: rgba(63,185,80,0.15);  color: var(--green);  border: 1px solid var(--green);  }
+  .v-watch { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid var(--yellow); }
+  .v-avoid { background: rgba(248,81,73,0.15);  color: var(--red);    border: 1px solid var(--red);    }
+  .run-date { color: var(--muted); font-size: 0.72rem; margin-top: 0.4rem; }
   .footer { color: var(--muted); font-size: 0.75rem; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
 </style>
 </head>
@@ -29,31 +36,36 @@
   <div class="batch-card">
     <h3>Batch 1 — Infrastructure &amp; Defense</h3>
     <p>HCC, BEL, RVNL, NBCC, HUDCO, LT, GRSE, IRB, ENGINERSIN, IDEAFORGE + more</p>
-    <a href="batch-1.html">View Report →</a>
-    <div><span class="status pending">⏳ Pending first run</span></div>
+    <a href="reports/batch-1.html">View Report →</a>
+    <div><span class="status done">✅ June 6, 2026</span></div>
+    <div class="verdict-counts">
+      <span class="verdict-pill v-buy">6 BUY</span>
+      <span class="verdict-pill v-watch">14 WATCHLIST</span>
+      <span class="verdict-pill v-avoid">3 AVOID</span>
+    </div>
   </div>
   <div class="batch-card">
     <h3>Batch 2 — Energy &amp; Power</h3>
     <p>SUZLON, NTPC, KPIGREEN, IEX, WEBELSOLAR, EMMVEE, SERVOTECH, OIL + more</p>
-    <a href="batch-2.html">View Report →</a>
+    <a href="reports/batch-2.html">View Report →</a>
     <div><span class="status pending">⏳ Pending first run</span></div>
   </div>
   <div class="batch-card">
     <h3>Batch 3 — Banking &amp; Finance</h3>
     <p>HDFCBANK, BANKINDIA, PFC, RECLTD, BANKBARODA, ANGELONE, IOB + more</p>
-    <a href="batch-3.html">View Report →</a>
+    <a href="reports/batch-3.html">View Report →</a>
     <div><span class="status pending">⏳ Pending first run</span></div>
   </div>
   <div class="batch-card">
     <h3>Batch 4 — IT &amp; Tech</h3>
     <p>TCS, COFORGE, KPITTECH, NEWGEN, TATAELXSI, STLTECH, TEJASNET + more</p>
-    <a href="batch-4.html">View Report →</a>
+    <a href="reports/batch-4.html">View Report →</a>
     <div><span class="status pending">⏳ Pending first run</span></div>
   </div>
   <div class="batch-card">
     <h3>Batch 5 — Others</h3>
     <p>ITC, ASIANPAINT, JSWSTEEL, BIOCON, NYKAA, SRF, SOBHA, PAGEIND + more</p>
-    <a href="batch-5.html">View Report →</a>
+    <a href="reports/batch-5.html">View Report →</a>
     <div><span class="status pending">⏳ Pending first run</span></div>
   </div>
 </div>
