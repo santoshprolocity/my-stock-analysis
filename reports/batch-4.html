@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batch 4 — IT &amp; Technology · Stock Analysis</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --muted: #8b949e; --text: #e6edf3; --accent: #58a6ff;
+      --buy: #3fb950; --watch: #d29922; --avoid: #f85149;
+    }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px; line-height: 1.6; padding: 32px 24px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { margin-bottom: 32px; }
+    header .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+    header p { color: var(--muted); font-size: 13px; }
+    .summary-cards { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+    .summary-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 16px 24px; flex: 1; min-width: 120px; text-align: center;
+    }
+    .summary-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
+    .summary-card .value { font-size: 28px; font-weight: 700; }
+    .summary-card.buy .value { color: var(--buy); }
+    .summary-card.watch .value { color: var(--watch); }
+    .summary-card.avoid .value { color: var(--avoid); }
+    .table-wrapper { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 10px 12px; text-align: left; font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr.buy-row { background: rgba(63,185,80,0.06); }
+    tbody td { padding: 10px 12px; vertical-align: middle; }
+    .ticker { font-weight: 700; color: var(--accent); font-size: 13px; }
+    .sector-tag {
+      display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px;
+      background: rgba(88,166,255,0.1); color: var(--accent); border: 1px solid rgba(88,166,255,0.2);
+    }
+    .verdict-badge {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+    }
+    .verdict-badge.BUY { background: rgba(63,185,80,0.15); color: var(--buy); border: 1px solid var(--buy); }
+    .verdict-badge.WATCH { background: rgba(210,153,34,0.15); color: var(--watch); border: 1px solid var(--watch); }
+    .verdict-badge.AVOID { background: rgba(248,81,73,0.15); color: var(--avoid); border: 1px solid var(--avoid); }
+    .price { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .range-bar-wrapper { min-width: 80px; }
+    .range-bar-bg { background: var(--border); border-radius: 3px; height: 6px; width: 100%; }
+    .range-bar-fill { background: var(--accent); border-radius: 3px; height: 6px; }
+    .range-label { font-size: 10px; color: var(--muted); margin-top: 3px; }
+    .notes { color: var(--muted); font-size: 12px; max-width: 220px; }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 600px) { body { padding: 16px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="breadcrumb"><a href="index.html">← Dashboard</a></div>
+  <h1>Batch 4 — IT &amp; Technology</h1>
+  <p>Analysis run: June 6, 2026 &nbsp;·&nbsp; 7 stocks &nbsp;·&nbsp; Every Thursday 01:00 IST</p>
+</header>
+<div class="summary-cards">
+  <div class="summary-card"><div class="label">Total</div><div class="value" style="color:var(--text)">7</div></div>
+  <div class="summary-card buy"><div class="label">BUY Setup</div><div class="value">0</div></div>
+  <div class="summary-card watch"><div class="label">Watchlist</div><div class="value">7</div></div>
+  <div class="summary-card avoid"><div class="label">Avoid</div><div class="value">0</div></div>
+</div>
+<div class="table-wrapper">
+<table>
+  <thead>
+    <tr>
+      <th>Ticker</th><th>Company</th><th>Sector</th><th>Verdict</th>
+      <th>CMP (₹)</th><th>Trigger (₹)</th><th>Stop Loss (₹)</th><th>52W Range</th><th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ticker">STLTECH</td>
+      <td>Sterlite Technologies</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">619.25</td><td class="price">660</td><td class="price">580</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:59%"></div></div><div class="range-label">₹430 — ₹750 &nbsp;|&nbsp; 59%</div></div></td>
+      <td class="notes">Optical fibre & network infra. Upper half of range. Watch ₹660.</td>
+    </tr>
+    <tr>
+      <td class="ticker">COFORGE</td>
+      <td>Coforge Ltd</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">1521.00</td><td class="price">1600</td><td class="price">1420</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:50%"></div></div><div class="range-label">₹1,100 — ₹1,950 &nbsp;|&nbsp; 50%</div></div></td>
+      <td class="notes">Mid-cap IT. Strong deal wins. Exactly mid-range. Watch ₹1,600.</td>
+    </tr>
+    <tr>
+      <td class="ticker">NEWGEN</td>
+      <td>Newgen Software</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">493.20</td><td class="price">520</td><td class="price">460</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:42%"></div></div><div class="range-label">₹380 — ₹650 &nbsp;|&nbsp; 42%</div></div></td>
+      <td class="notes">Low-code BPM platform. Growing SaaS revenues. Watch ₹520.</td>
+    </tr>
+    <tr>
+      <td class="ticker">TCS</td>
+      <td>Tata Consultancy Services</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">2241.00</td><td class="price">2350</td><td class="price">2100</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:38%"></div></div><div class="range-label">₹1,900 — ₹2,800 &nbsp;|&nbsp; 38%</div></div></td>
+      <td class="notes">IT bellwether. BFSI & retail pressure. Stable dividend. Watch ₹2,350.</td>
+    </tr>
+    <tr>
+      <td class="ticker">TEJASNET</td>
+      <td>Tejas Networks</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">576.00</td><td class="price">620</td><td class="price">535</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:28%"></div></div><div class="range-label">₹450 — ₹900 &nbsp;|&nbsp; 28%</div></div></td>
+      <td class="notes">BSNL 4G/5G vendor. Tata Group backing. Lower third. Watch ₹620.</td>
+    </tr>
+    <tr>
+      <td class="ticker">KPITTECH</td>
+      <td>KPIT Technologies</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">779.05</td><td class="price">820</td><td class="price">730</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:23%"></div></div><div class="range-label">₹650 — ₹1,200 &nbsp;|&nbsp; 23%</div></div></td>
+      <td class="notes">Auto software specialist. EV tailwind. Lower quarter. Watch ₹820.</td>
+    </tr>
+    <tr>
+      <td class="ticker">TATAELXSI</td>
+      <td>Tata Elxsi Ltd</td>
+      <td><span class="sector-tag">IT</span></td>
+      <td><span class="verdict-badge WATCH">WATCHLIST</span></td>
+      <td class="price">4299.90</td><td class="price">4500</td><td class="price">4050</td>
+      <td><div class="range-bar-wrapper"><div class="range-bar-bg"><div class="range-bar-fill" style="width:23%"></div></div><div class="range-label">₹3,800 — ₹6,000 &nbsp;|&nbsp; 23%</div></div></td>
+      <td class="notes">Premium design & tech services. Rich valuation. Lower quarter. Watch ₹4,500.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<footer><p>Automated weekly analysis · Data sourced from NSE, Yahoo Finance, Screener.in · Not investment advice.</p></footer>
+</body>
+</html>

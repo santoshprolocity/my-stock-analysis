@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Analysis Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --muted: #8b949e; --text: #e6edf3; --accent: #58a6ff;
+      --buy: #3fb950; --watch: #d29922; --avoid: #f85149; --pending: #6e7681;
+    }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px; line-height: 1.6; padding: 32px 24px;
+      max-width: 960px; margin: 0 auto;
+    }
+    header { margin-bottom: 40px; }
+    header h1 { font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    header p { color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .batch-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 22px; transition: border-color 0.2s;
+      text-decoration: none; display: block; color: inherit;
+    }
+    .batch-card:hover { border-color: var(--accent); }
+    .batch-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+    .batch-number { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
+    .batch-title { font-size: 16px; font-weight: 600; color: var(--text); }
+    .status-badge {
+      padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+    }
+    .status-badge.done { background: rgba(63,185,80,0.12); color: var(--buy); border: 1px solid var(--buy); }
+    .batch-meta { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+    .verdict-row { display: flex; gap: 12px; }
+    .verdict-pill { display: flex; align-items: center; gap: 5px; font-size: 12px; }
+    .verdict-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .verdict-dot.buy { background: var(--buy); }
+    .verdict-dot.watch { background: var(--watch); }
+    .verdict-dot.avoid { background: var(--avoid); }
+    .verdict-pill span { color: var(--muted); }
+    .verdict-pill strong { color: var(--text); }
+    .run-date { font-size: 11px; color: var(--muted); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 600px) { body { padding: 16px; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Stock Analysis Dashboard</h1>
+  <p>Weekly batch analysis — Infrastructure &amp; Defense | Energy &amp; Power | Banking &amp; Finance | IT &amp; Tech | Others</p>
+</header>
+<div class="grid">
+
+  <a href="batch-1.html" class="batch-card">
+    <div class="batch-header">
+      <div><div class="batch-number">Batch 1</div><div class="batch-title">Infrastructure &amp; Defense</div></div>
+      <span class="status-badge done">Done</span>
+    </div>
+    <div class="batch-meta">23 stocks · Every Monday 01:00 IST</div>
+    <div class="verdict-row">
+      <div class="verdict-pill"><div class="verdict-dot buy"></div><span>BUY&nbsp;</span><strong>6</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot watch"></div><span>WATCH&nbsp;</span><strong>14</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot avoid"></div><span>AVOID&nbsp;</span><strong>3</strong></div>
+    </div>
+    <div class="run-date">Last run: June 6, 2026</div>
+  </a>
+
+  <a href="batch-2.html" class="batch-card">
+    <div class="batch-header">
+      <div><div class="batch-number">Batch 2</div><div class="batch-title">Energy &amp; Power</div></div>
+      <span class="status-badge done">Done</span>
+    </div>
+    <div class="batch-meta">8 stocks · Every Tuesday 01:00 IST</div>
+    <div class="verdict-row">
+      <div class="verdict-pill"><div class="verdict-dot buy"></div><span>BUY&nbsp;</span><strong>1</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot watch"></div><span>WATCH&nbsp;</span><strong>5</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot avoid"></div><span>AVOID&nbsp;</span><strong>2</strong></div>
+    </div>
+    <div class="run-date">Last run: June 6, 2026</div>
+  </a>
+
+  <a href="batch-3.html" class="batch-card">
+    <div class="batch-header">
+      <div><div class="batch-number">Batch 3</div><div class="batch-title">Banking &amp; Finance</div></div>
+      <span class="status-badge done">Done</span>
+    </div>
+    <div class="batch-meta">7 stocks · Every Wednesday 01:00 IST</div>
+    <div class="verdict-row">
+      <div class="verdict-pill"><div class="verdict-dot buy"></div><span>BUY&nbsp;</span><strong>1</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot watch"></div><span>WATCH&nbsp;</span><strong>6</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot avoid"></div><span>AVOID&nbsp;</span><strong>0</strong></div>
+    </div>
+    <div class="run-date">Last run: June 6, 2026</div>
+  </a>
+
+  <a href="batch-4.html" class="batch-card">
+    <div class="batch-header">
+      <div><div class="batch-number">Batch 4</div><div class="batch-title">IT &amp; Technology</div></div>
+      <span class="status-badge done">Done</span>
+    </div>
+    <div class="batch-meta">7 stocks · Every Thursday 01:00 IST</div>
+    <div class="verdict-row">
+      <div class="verdict-pill"><div class="verdict-dot buy"></div><span>BUY&nbsp;</span><strong>0</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot watch"></div><span>WATCH&nbsp;</span><strong>7</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot avoid"></div><span>AVOID&nbsp;</span><strong>0</strong></div>
+    </div>
+    <div class="run-date">Last run: June 6, 2026</div>
+  </a>
+
+  <a href="batch-5.html" class="batch-card">
+    <div class="batch-header">
+      <div><div class="batch-number">Batch 5</div><div class="batch-title">Others</div></div>
+      <span class="status-badge done">Done</span>
+    </div>
+    <div class="batch-meta">8 stocks · Every Friday 01:00 IST</div>
+    <div class="verdict-row">
+      <div class="verdict-pill"><div class="verdict-dot buy"></div><span>BUY&nbsp;</span><strong>1</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot watch"></div><span>WATCH&nbsp;</span><strong>7</strong></div>
+      <div class="verdict-pill"><div class="verdict-dot avoid"></div><span>AVOID&nbsp;</span><strong>0</strong></div>
+    </div>
+    <div class="run-date">Last run: June 6, 2026</div>
+  </a>
+
+</div>
+<footer>
+  <p>Automated weekly analysis · Data sourced from NSE, Yahoo Finance, Screener.in · Not investment advice.</p>
+</footer>
+</body>
+</html>

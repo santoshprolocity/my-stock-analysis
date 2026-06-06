@@ -1,0 +1,54 @@
+ticker,company,batch,sector
+HCC,Hindustan Construction Co. Ltd,1,Infrastructure
+BEL,Bharat Electronics Ltd,1,Defense
+RVNL,Rail Vikas Nigam Ltd,1,Infrastructure
+NBCC,NBCC (India) Ltd,1,Infrastructure
+HUDCO,Housing & Urban Dev. Corp. Ltd,1,Infrastructure
+LT,Larsen & Toubro Ltd,1,Infrastructure
+GRSE,Garden Reach Shipbuilders & Engineers,1,Defense
+IRB,IRB Infrastructure Developers Ltd,1,Infrastructure
+ENGINERSIN,Engineers India Ltd,1,Defense
+IDEAFORGE,ideaForge Technology Ltd,1,Defense
+AVANTEL,Avantel Ltd,1,Defense
+DATAPATTNS,Data Patterns (India) Ltd,1,Defense
+DSSL,Dynacons Systems & Solutions Ltd,1,Defense
+TRANSRAILL,Transrail Lighting Ltd,1,Infrastructure
+PNCINFRA,PNC Infratech Ltd,1,Infrastructure
+ANURAS,Anupam Rasayan India Ltd,1,Infrastructure
+HGINFRA,H.G. Infra Engineering Ltd,1,Infrastructure
+BONDADA,Bondada Engineering Ltd,1,Infrastructure
+KECL,Kirloskar Electric Co. Ltd,1,Infrastructure
+ISGEC,ISGEC Heavy Engineering Ltd,1,Infrastructure
+EIEL,Enviro Infra Engineers Ltd,1,Infrastructure
+JYOTISTRUC,Jyoti Structures Ltd,1,Infrastructure
+DHARAN,Dharan Infra-EPC Ltd,1,Infrastructure
+SUZLON,Suzlon Energy Ltd,2,Energy
+NTPC,NTPC Ltd,2,Energy
+KPIGREEN,KPI Green Energy Ltd,2,Energy
+IEX,Indian Energy Exchange,2,Energy
+WEBELSOLAR,Websol Energy System,2,Energy
+EMMVEE,Emmvee Photovoltaic Power,2,Energy
+SERVOTECH,Servotech Power Systems,2,Energy
+OIL,Oil India Ltd,2,Energy
+HDFCBANK,HDFC Bank Ltd,3,Banking
+BANKINDIA,Bank of India,3,Banking
+PFC,Power Finance Corp,3,Finance
+RECLTD,REC Ltd,3,Finance
+BANKBARODA,Bank of Baroda,3,Banking
+ANGELONE,Angel One Ltd,3,Finance
+IOB,Indian Overseas Bank,3,Banking
+TCS,Tata Consultancy Services,4,IT
+COFORGE,Coforge Ltd,4,IT
+KPITTECH,KPIT Technologies,4,IT
+NEWGEN,Newgen Software,4,IT
+TATAELXSI,Tata Elxsi Ltd,4,IT
+STLTECH,Sterlite Technologies,4,IT
+TEJASNET,Tejas Networks,4,IT
+ITC,ITC Ltd,5,FMCG
+ASIANPAINT,Asian Paints Ltd,5,Consumer
+JSWSTEEL,JSW Steel Ltd,5,Metals
+BIOCON,Biocon Ltd,5,Pharma
+NYKAA,FSN E-Commerce Ventures,5,E-Commerce
+SRF,SRF Ltd,5,Chemicals
+SOBHA,Sobha Ltd,5,Realty
+PAGEIND,Page Industries,5,Consumer
